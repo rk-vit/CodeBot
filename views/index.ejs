@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>CodeBot</title>
+  <link href="css/styles.css" rel="stylesheet">
+</head>
+<body>
+  <header>
+    <div class="header-content">
+      <h1>CodeBot</h1>
+      <p>Current Mode: Theme Integration</p>
+      <form action="/changes">
+        <button type="submit" class="mode-switch">Switch to Code Change Mode</button>
+      </form>
+    </div>
+  </header>
+
+  <main>
+    <div class="searchform">
+      <form action="/theme" method="POST">
+        <textarea placeholder="Enter the theme" class="searchbar" name="theme" required></textarea>
+        <textarea placeholder="Enter the content" class="searchbar" name="content" required></textarea>
+        <button type="submit" class="askButton">Integrate Theme</button>
+      </form>
+    </div>
+
+    <div class="outputbox">
+      <div class="code-container">
+        <% if (output) { %>
+          <pre><code class="language-html"><%= output %></code></pre>
+        <% } else { %>
+          <p>Provide the HTML theme and content to generate an integrated webpage.</p>
+        <% } %>
+      </div>
+    </div>
+    <footer>
+        <p>&copy; 2024 Revanth. All rights reserved.</p>
+        <p>Made by Revanth for <strong>CodeChef VITC Challenge Week-1</strong></p>
+    </footer>
+      
+  </main>
+
+  <script src="js/one.js"></script>
+</body>
+</html>

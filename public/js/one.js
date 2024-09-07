@@ -1,3 +1,4 @@
+
 function separateCodeAndText(response) {
     const codeRegex = /'''(.*?)'''/s;
     const codeMatch = response.match(codeRegex);

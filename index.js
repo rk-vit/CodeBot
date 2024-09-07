@@ -60,7 +60,13 @@ app.get("/changes", (req, res) => {
 app.post("/changes", async (req, res) => {
     const code = req.body.code;
     const changes = req.body.changes;
-    const prompt = `I Have some code :- ${code} and a text explaining the changes i want :- ${changes}, now generate the code with changes made `;
+    const prompt = `I Have some code :- ${code} and a text explaining the changes i want :- ${changes}, now generate the code with changes made using this json schema: 
+        { "type":"object",
+            "properties":{
+                "code":{"type":"string"},
+                "explanation_text:{"type":"string"}
+            }
+        }`;
     const result = await model.generateContent(prompt);
     let responseCode;
     try {
